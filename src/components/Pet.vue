@@ -2,7 +2,7 @@
   <div class="pet">
     <Card>
       <template #header>
-        <img :src="pet.img" />
+        <img :src="pet.url" />
       </template>
       <template #title>{{ pet.name }}</template>
       <template #subtitle>Age: {{ pet.age }}</template>
