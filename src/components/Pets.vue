@@ -13,7 +13,6 @@
 <script>
 import Pet from "./Pet.vue";
 export default {
-  //   props: ["pets"],
   props: {
     pets: Array,
   },

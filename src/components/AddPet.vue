@@ -55,7 +55,6 @@ export default {
     onSubmit(e) {
       e.preventDefault();
       const newPet = {
-        // id: Math.random(),
         name: this.name,
         age: this.age,
         url: this.url,
