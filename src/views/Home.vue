@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="home"></div> -->
   <AddPet />
-  <Pets @remove-pet="removePet" :pets="pets" />
+  <Pets @remove-pet="removePet" @add-favorite="addFavorite" :pets="pets" />
 </template>
 
 <script>
@@ -16,6 +16,11 @@ export default {
       if (confirm("Are you sure you want to remove this pet?")) {
         this.pets = this.pets.filter((pet) => pet.id !== id);
       }
+    },
+    addFavorite(id) {
+      this.pets = this.pets.map((pet) =>
+        pet.id === id ? { ...pet, isFavorite: !pet.isFavorite } : pet
+      );
     },
   },
   data() {

@@ -24,6 +24,7 @@
           style="margin-right: 4em"
         />
         <Button
+          @click="$emit('add-favorite', pet.id)"
           icon="pi pi-heart"
           :class="[
             pet.isFavorite ? '' : 'p-button-outlined',
