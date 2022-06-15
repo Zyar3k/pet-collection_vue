@@ -1,20 +1,11 @@
 <template>
   <div class="pet">
-    <!-- <h3>{{ pet.name }}</h3> -->
     <Card>
       <template #header>
-        <img src="{{ pet.img }}" />
+        <img :src="pet.img" />
       </template>
       <template #title>{{ pet.name }}</template>
       <template #subtitle>Age: {{ pet.age }}</template>
-      <!-- <template #content>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </template> -->
       <template #footer>
         <Button
           @click="onRemove(pet.id)"
@@ -50,4 +41,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+img {
+  height: 250px;
+  object-fit: cover;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="home"></div> -->
-  <AddPet />
+  <AddPet @add-pet="addPet" />
   <Pets @remove-pet="removePet" @add-favorite="addFavorite" :pets="pets" />
 </template>
 
@@ -21,6 +21,9 @@ export default {
       this.pets = this.pets.map((pet) =>
         pet.id === id ? { ...pet, isFavorite: !pet.isFavorite } : pet
       );
+    },
+    addPet(pet) {
+      this.pets = [...this.pets, pet];
     },
   },
   data() {
