@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="home"></div> -->
   <AddPet />
-  <Pets :pets="pets" />
+  <Pets @remove-pet="removePet" :pets="pets" />
 </template>
 
 <script>
@@ -11,6 +11,13 @@ import AddPet from "../components/AddPet.vue";
 export default {
   name: "Home",
   components: { Pets, AddPet },
+  methods: {
+    removePet(id) {
+      if (confirm("Are you sure you want to remove this pet?")) {
+        this.pets = this.pets.filter((pet) => pet.id !== id);
+      }
+    },
+  },
   data() {
     return {
       pets: [

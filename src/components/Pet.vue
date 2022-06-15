@@ -17,6 +17,7 @@
       </template> -->
       <template #footer>
         <Button
+          @click="onRemove(pet.id)"
           icon="pi pi-times"
           label="Remove"
           class="p-button-danger"
@@ -39,6 +40,11 @@
 export default {
   props: {
     pet: Object,
+  },
+  methods: {
+    onRemove(id) {
+      this.$emit("remove-pet", id);
+    },
   },
 };
 </script>
