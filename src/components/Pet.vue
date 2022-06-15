@@ -22,10 +22,13 @@
           class="p-button-danger"
           style="margin-right: 4em"
         />
-        <Button icon="pi pi-heart" class="p-button-rounded p-button-danger" />
         <Button
           icon="pi pi-heart"
-          class="p-button-rounded p-button-danger p-button-outlined"
+          :class="[
+            pet.isFavorite ? '' : 'p-button-outlined',
+            'p-button-rounded',
+            'p-button-danger',
+          ]"
         />
       </template>
     </Card>
