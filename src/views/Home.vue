@@ -25,36 +25,51 @@ export default {
     addPet(pet) {
       this.pets = [...this.pets, pet];
     },
+    async fetchPets() {
+      const res = await fetch(
+        "https://62a9e4e63b314385543dbec3.mockapi.io/pets"
+      );
+      const data = await res.json();
+      return data;
+    },
+    async fetchPet(id) {
+      const res = await fetch(
+        `https://62a9e4e63b314385543dbec3.mockapi.io/pets/${id}`
+      );
+      const data = await res.json();
+      return data;
+    },
   },
   data() {
     return {
       pets: [],
     };
   },
-  created() {
-    this.pets = [
-      {
-        id: 1,
-        name: "Fido",
-        age: 3,
-        img: "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_5179.jpg",
-        isFavorite: true,
-      },
-      {
-        id: 2,
-        name: "Ruby",
-        age: 4,
-        img: "https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_3484.jpg",
-        isFavorite: false,
-      },
-      {
-        id: 3,
-        name: "Coco",
-        age: 5,
-        img: "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_8589.jpg",
-        isFavorite: false,
-      },
-    ];
+  async created() {
+    this.pets = await this.fetchPets();
+    // this.pets = [
+    //   {
+    //     id: 1,
+    //     name: "Fido",
+    //     age: 3,
+    //     img: "https://images.dog.ceo/breeds/spaniel-brittany/n02101388_5179.jpg",
+    //     isFavorite: true,
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Ruby",
+    //     age: 4,
+    //     img: "https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_3484.jpg",
+    //     isFavorite: false,
+    //   },
+    //   {
+    //     id: 3,
+    //     name: "Coco",
+    //     age: 5,
+    //     img: "https://images.dog.ceo/breeds/terrier-tibetan/n02097474_8589.jpg",
+    //     isFavorite: false,
+    //   },
+    // ];
   },
 };
 </script>
