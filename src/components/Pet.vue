@@ -1,9 +1,9 @@
 <template>
   <div class="pet">
     <!-- <h3>{{ pet.name }}</h3> -->
-    <Card style="width: 25em">
+    <Card>
       <template #header>
-        <img src="{{ pet.img }}" style="height: 15rem" />
+        <img src="{{ pet.img }}" />
       </template>
       <template #title>{{ pet.name }}</template>
       <template #subtitle>Age: {{ pet.age }}</template>

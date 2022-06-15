@@ -1,7 +1,6 @@
 <template>
-  <div class="pets">
-    <div v-for="pet in pets" :key="pet.id">
-     
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3" v-for="pet in pets" :key="pet.id">
       <Pet :pet="pet" />
     </div>
   </div>
