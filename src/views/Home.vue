@@ -1,14 +1,16 @@
 <template>
-  <div class="home"></div>
+  <!-- <div class="home"></div> -->
+  <AddPet />
   <Pets :pets="pets" />
 </template>
 
 <script>
 // @ is an alias to /src
 import Pets from "../components/Pets.vue";
+import AddPet from "../components/AddPet.vue";
 export default {
   name: "Home",
-  components: { Pets },
+  components: { Pets, AddPet },
   data() {
     return {
       pets: [
